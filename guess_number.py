@@ -8,9 +8,20 @@ while guess != "q":
         print("Congratulations! You guessed the right number.")
         break
     else:
-        guess = input(f"Sorry! Try again! (enter \"q\" to quit.) ")
-        if guess == "q":
-            print(f'The correct number was {number}. Thanks for playing!')
-            break
+        if guess > number:
+            guess = input(f"Sorry, too high! Try again! (enter \"q\" to quit.) ")
+            if guess == "q":
+                print(f'The correct number was {number}. Thanks for playing!')
+                break
+            else:
+                guess = int(guess)
+        elif guess < number:
+            guess = input(f"Sorry, too low! Try again! (enter \"q\" to quit.) ")
+            if guess == "q":
+                print(f'The correct number was {number}. Thanks for playing!')
+                break
+            else:
+                guess = int(guess)
+        
 
 
